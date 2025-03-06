@@ -1,24 +1,18 @@
 import './profile.css'
 
-const ProfileCard = (props) => {
+const ProfileCard = ({ image, name, email, age, link }) => {
     return (
         <div className=''
             style={style.card}
         >
-            <img src={props.image} style={style.image} alt="" width={100} />
-            <p>Name: {props.name}</p>
-            <p>Email: {props.email}</p>
-            <p>Age: {props.age}</p>
-            <a href={props.link} >Website</a>
+            <img src={image} style={style.image} alt="" width={100} />
+            <p>Name: {name}</p>
+            <p>Email: {email}</p>
+            <p>Age: {age}</p>
+            <a href={link} >Website</a>
         </div>
     )
 }
-
-// const cardStyle = {
-//    border: '1px solid black',
-//    backgroundColor: '#f2f2f2',
-//    padding: '10px',
-// }
 
 const style = {
     card: {
