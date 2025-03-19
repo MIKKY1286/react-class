@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,12 +51,12 @@ const Products = () => {
           <section>
             {
                 products?.map((item, index)=>(
-                    <a href={`/products/${item.id}`}>
+                    <Link to={`/products/${item.id}`}>
                         <img src={item.image} alt="" width={200}/>
                         <h1>{item.title}</h1>
                         <span>{item.price}</span>
                         <p>{item.category}</p>
-                    </a>
+                    </Link>
                 ))
             }
           </section>
