@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Button from "./components/Button";
 import Counter from "./components/Counter";
-import Products from "./pages/Products";
+import Products from "./pages/products/Products";
 import ProfileCard from "./components/ProfileCard";
 import LandingPage from "./pages/LandingPage";
 import NotFound from "./pages/NotFound";
-import SingleProduct from "./pages/SingleProduct";
+import SingleProduct from "./pages/products/SingleProduct";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 const App = () => {
   
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/counter/show" element={<Counter />} />
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
