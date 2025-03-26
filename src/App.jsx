@@ -11,29 +11,34 @@ import Footer from "./components/Footer";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import AuthProvider from "./contexts/AuthContext";
+import ProductProvider from "./contexts/ProductContext";
 
 const App = () => {
-  
   // parameter => param
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
+        <AuthProvider>
+          <ProductProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
 
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<SingleProduct />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<SingleProduct />} />
 
-          <Route path="/users" element={<ProfileCard />} />
-          <Route path="/counter/show" element={<Counter />} />
-          <Route path="/sign-up" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/users" element={<ProfileCard />} />
+              <Route path="/counter/show" element={<Counter />} />
+              <Route path="/sign-up" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </ProductProvider>
+        </AuthProvider>
       </BrowserRouter>
     </>
   );

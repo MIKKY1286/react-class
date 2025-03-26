@@ -1,12 +1,15 @@
+import { use, useContext } from 'react'
 import './profile.css'
+import { authContext } from '../contexts/AuthContext'
 
 const ProfileCard = ({ image, name, email, age, link }) => {
+    const {userName} = useContext(authContext)
     return (
         <div className=''
             style={style.card}
         >
             <img src={image} style={style.image} alt="" width={100} />
-            <p>Name: {name}</p>
+            <p>Name: {userName}</p>
             <p>Email: {email}</p>
             <p>Age: {age}</p>
             <a href={link} >Website</a>

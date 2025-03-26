@@ -1,11 +1,10 @@
 import Hero from "../components/Hero"
 import Navbar from "../components/Navbar"
 
-const LandingPage = ()=>{
+const LandingPage = ({children})=>{
     return(
         <div>
-         
-            <Hero />
+         {children} 
         </div>
     )
 }

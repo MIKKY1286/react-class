@@ -7,9 +7,9 @@
 
 
 
-const Button = (props)=>{
+const Button = ({text})=>{
     return(
-        <button onClick={props.click}>{props.text}</button>
+        <button >{text}</button>
     )
 }
 

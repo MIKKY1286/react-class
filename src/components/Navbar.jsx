@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import Hero from "./Hero";
 import "./navbar.css";
+import { useContext } from "react";
+import { authContext } from "../contexts/AuthContext";
 const Navbar = () => {
-  const signUp = () => {
-    alert("signingh up...");
-  };
+ const {login} = useContext(authContext)
 
   return (
     <div className="navbar">
@@ -16,6 +16,7 @@ const Navbar = () => {
         <Link to="/contact">Contact</Link>
         <Link to="/products">Products</Link>
       </div>
+      <button onClick={login}>tststs</button>
       <div style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
         <Link style={styles.button} to='/sign-up'>Sign up</Link>
         <Link style={styles.button} to='/login'>Login</Link>
